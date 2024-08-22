@@ -1,13 +1,21 @@
+/*Name: Subha Chakraborty
+ RegNo: MT2024156
+ Problem statement:Write a program to copy file1 into file2 ($cp file1 file2). */
+
 #include<stdio.h>
 #include<unistd.h>
 #include<fcntl.h>
 
-int main(){
+int main(argc,char *argv[]){
 char buffer[200];
-int fd = open("7.1",O_RDWR);
-int ret = read(fd,buffer,sizeof(buffer));
-int fd2 =open("7.2",O_RDWR);
-write(fd2,buffer,ret);
+int fd = open(argv[1],O_RDONLY,0400);
+if(fd==-1) perror("file not opened");
+int ret;
+int fd2 =open("7.2",O_RDWR|O_CREAT|O_EXCL,0600);
+if(fd2==-1) perror("file cannot be copied")
+while((ret=read(fd,buffer,sizeof(buffer))>0){
+write(fd2,buffer,ret);}
 close(fd);
 close(fd2);
 }
+
