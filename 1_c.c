@@ -8,7 +8,10 @@ c. FIFO (mkfifo Library Function or mknod system call
 #include<fcntl.h>
 #include<sys/types.h>
 #include<sys/stat.h>
-int main(){
-mknod("pipe_1.c",S_IFIFO|0744,0);
-perror("ERROR OCCURED");
+int main(int c,char* argv[]){
+int check=mknod(argv[1],S_IFIFO|0666,0);
+if(check==-1){printf("Cannot create named pipe\n");}
 }
+/* Terminal: ./a.out q3_pipe
+   Output:prw-rw-r-- 1 subha-chakraborty subha-chakraborty     0 Aug 24 09:31  q3_pipe
+ */
