@@ -5,9 +5,9 @@ Close the file when end of file is reached.*/
 #include<stdio.h>
 #include<unistd.h>
 #include<fcntl.h>
-
+#include<stdlib.h>
 int main(int c, char* argv[]){
-if(c!=1) { printf("the file doesn't exit");}
+if(c!=1) { printf("the file doesn't exit"); exit(-1);}
 
 int fd = open(argv[1],O_RDONLY);
 if(fd==-1) printf("No such file");
