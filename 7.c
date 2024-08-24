@@ -5,9 +5,10 @@
 #include<stdio.h>
 #include<unistd.h>
 #include<fcntl.h>
-
-int main(int argc,char *argv[]){
+#include<stdlib.h>
+int main(int c,char *argv[]){
 char buffer[200];
+if(c!=3){printf("Wrong number of arguments\n"); exit(-1);}
 int fd = open(argv[1],O_RDONLY,0400);
 if(fd==-1) printf("file not opened");
 int ret;
@@ -20,3 +21,11 @@ close(fd);
 close(fd2);
 }
 
+/* Output:
+$ ./a.out original copy1
+subha-chakraborty@subha-chakraborty-ASUS-TUF-Dash-F15-FX517ZC-FX517ZC:~/hdlist1$ cat original
+Content of the original
+subha-chakraborty@subha-chakraborty-ASUS-TUF-Dash-F15-FX517ZC-FX517ZC:~/hdlist1$ cat copy1
+Content of the original
+
+*/
