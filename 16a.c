@@ -34,4 +34,4 @@ printf("The Exit section\n");
 free(l);
 
 }
-
+![image](https://github.com/user-attachments/assets/bdb43974-7efa-4aca-8663-03317a0fbb5e)
