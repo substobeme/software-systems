@@ -7,10 +7,10 @@ Close the file when end of file is reached.*/
 #include<fcntl.h>
 
 int main(int c, char* argv[]){
-if(c!=1) { perror("the file doesn't exit");}
+if(c!=1) { printf("the file doesn't exit");}
 
 int fd = open(argv[1],O_RDONLY);
-if(fd==-1) perror("No such file");
+if(fd==-1) printf("No such file");
 char buffer[5000];
 int  buff = read(fd,buffer,sizeof(buffer));
 int move =0;
@@ -27,7 +27,7 @@ i=i+1;
 }
 }
 /*terminal input: ./a.out 8.1
- output: the file doesn't exit: Success
+ output: 
 this is line1.
 The program has read one line
 this is line2.
