@@ -9,9 +9,10 @@ b. program should be able to identify any type of a file. */
 #include<unistd.h>
 #include<sys/stat.h>
 #include<string.h>
-int main(int argc,char *argv[]){
+int main(int c,char *argv[]){
+if(c!=2){printf("Wrong number of arguments\n"); exit(-1);}
 struct stat *temp=malloc(sizeof(struct stat));
-if(lstat(argv[1],temp)==-1){ perror("NO such FILE");}
+if(lstat(argv[1],temp)==-1){ printf("NO such FILE");exit(-1);}
 unsigned int res = temp->st_mode;
  
 if((res & S_IFMT) == S_IFSOCK) printf("This file is a socket\n");
