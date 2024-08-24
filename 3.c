@@ -5,9 +5,13 @@ Problem Statement: 3. Write a program to create a file and print the file descri
 
 #include<stdio.h>
 #include<fcntl.h>
-int main(){
+int main(int c, char* argv[]){
 int fd1;
-fd1 = creat("file for 3",00744);
-perror("error occured plz check");
-printf("%d\n",fd1);
+fd1 = creat(argv[1],00744);
+if(fd1==-1) printf("Cannot create file\n");
+printf("The file descriptor  value is %d\n",fd1);
 }
+/*Terminal:$ ./a.out newfile
+Output: The file descriptor  value is 3
+
+ */
