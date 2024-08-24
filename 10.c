@@ -19,12 +19,12 @@ write(fd,"EXTRASTUFF",10);
 printf("The return value of lseek %d\n",r);
 
 close(fd);
-// od -c 10.1
+
 }
 /* Output:
 $./a.out seek
 The return value of lseek 20
-od -c seek
+$od -c seek
 0000000   1   2   3   4   5   6   7   8   9   0  \0  \0  \0  \0  \0  \0
 0000020  \0  \0  \0  \0   E   X   T   R   A   S   T   U   F   F
 0000036
