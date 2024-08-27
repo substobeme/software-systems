@@ -7,16 +7,16 @@
 #include<stdio.h>
 #include<unistd.h>
 #include<time.h>
-#include<stdint.h>
+//#include<stdint.h>
 
-uint64_t rdtsc(){
-unsigned int  lo,hi;
+unsigned long long  rdtsc(){
+unsigned long long  lo,hi;
 __asm__ __volatile__( 
 "rdtsc": "=a" (lo), "=d"(hi));
-return ((uint64_t)hi<<32)|lo;}
+return ((long long)hi<<32)|lo;}
 
 int main(){
-uint64_t start,end;
+unsigned long long  start,end;
 start = rdtsc();
 int pid= getpid();
 end =rdtsc();
@@ -29,7 +29,8 @@ double timespan=( double)span/avg;
 printf("The time taken to get pid %d is %lf milliseconds\n",pid,timespan);
 return 0;
 } 
-/* Output:The time taken to get pid 3205 is 0.004650 milliseconds
+/* Output:The time taken to get pid 5400 is 0.005126 milliseconds
+
 
 
 */
