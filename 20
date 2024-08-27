@@ -1,0 +1,20 @@
+Name: Subha Chakraborty
+RegNo: MT2024156
+ProblemStatement: Find out the priority of your running program. Modify the priority with nice command.
+
+
+
+Terminal:
+$ ps -l
+F S   UID     PID    PPID  C PRI  NI ADDR SZ WCHAN  TTY          TIME CMD
+0 S  1000    4561    3001  0  80   0 -  2924 do_wai pts/1    00:00:00 bash
+0 R  1000    5265    4561 99  80   0 -   621 -      pts/1    00:00:02 a.out
+4 R  1000    5266    4561  0  80   0 -  3518 -      pts/1    00:00:00 ps
+subha-chakraborty@subha-chakraborty-ASUS-TUF-Dash-F15-FX517ZC-FX517ZC:~/hdlist1$ sudo renice 11 -p 5265
+5265 (process ID) old priority 0, new priority 11
+subha-chakraborty@subha-chakraborty-ASUS-TUF-Dash-F15-FX517ZC-FX517ZC:~/hdlist1$ ps -l
+F S   UID     PID    PPID  C PRI  NI ADDR SZ WCHAN  TTY          TIME CMD
+0 S  1000    4561    3001  0  80   0 -  2924 do_wai pts/1    00:00:00 bash
+0 R  1000    5265    4561 99  91  11 -   621 -      pts/1    00:00:31 a.out
+4 R  1000    5271    4561  0  80   0 -  3518 -      pts/1    00:00:00 ps
+
