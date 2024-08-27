@@ -7,7 +7,7 @@
 #include<stdio.h>
 #include<unistd.h>
 #include<time.h>
-//#include<stdint.h>
+
 
 unsigned long long  rdtsc(){
 unsigned long long  lo,hi;
