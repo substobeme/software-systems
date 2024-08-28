@@ -27,4 +27,10 @@ exit(0);
 $ ./a.out
 The Child process with pid 5498, has  parent pid 5497
 The Child process with pid 5498, has  parent pid 1801
+
+$ ps -ef|grep 1801
+UID        PID        PPID  C STIME TTY          TIME        CMD
+subha-c+    1801       1    0 01:07 ?            00:00:00 /lib/systemd/systemd --user
+
+
 */
