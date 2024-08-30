@@ -15,7 +15,7 @@
 #include<sys/wait.h>
 
 int main(){
-int pid1,pid2;
+int pid1;
 pid1= fork();
 
 if(pid1!=0)printf("The process id of first child %d\n",pid1);
