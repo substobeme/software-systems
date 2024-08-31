@@ -1,6 +1,6 @@
 /*========================================================================================
   ========================================================================================
-   Name: 16b.c
+   Name: 18b.c
    Author: Subha Chakraborty
    Description: Write a program to perform Record locking.
                 b. Implement read lock
