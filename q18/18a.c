@@ -1,10 +1,14 @@
-/* Name: Subha Chakraborty
-   RegNo: MT2024156
-   ProblemStatement:18. Write a program to perform Record locking.
-a. Implement write lock
-b. Implement read lock
-Create three records in a file. Whenever you access a particular record, first lock it then modify/access
-to avoid race condition.*/ 
+/*========================================================================================
+  ========================================================================================
+   Name: 18a.c
+   Author: Subha Chakraborty
+   Description: Write a program to perform Record locking.
+                a. Implement write lock
+                Create three records in a file. Whenever you access a particular record, first lock it then modify/access
+                to avoid race condition.
+   Date: 24th August,2024
+  =======================================================================================
+  =======================================================================================*/ 
 
 
 
