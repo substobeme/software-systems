@@ -1,7 +1,12 @@
-/*Name: Subha Chakraborty
-  RegNo: MT2024156
-  ProblemStatement:Write a program to open a file in read only mode, read line by line and display each line as it is read.
-Close the file when end of file is reached.*/ 
+/*========================================================================================
+  ========================================================================================
+   Name: 8.c
+   Author: Subha Chakraborty
+   Description:Write a program to open a file in read only mode, read line by line and display each line as it is read.
+   Close the file when end of file is reached.
+   Date: 24th August,2024
+  =======================================================================================
+  =======================================================================================*/
 #include<stdio.h>
 #include<unistd.h>
 #include<fcntl.h>
@@ -25,6 +30,7 @@ i=i+1;
 }
 
 }
+close(fd);
 }
 /*terminal input: ./a.out 8.1
  output: 
